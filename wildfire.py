@@ -44,13 +44,13 @@ def county_visualizer(df, metric, colorscale = 'thermal', title = ''):
 
     fig.update_layout(geo=dict(bgcolor = 'rgba(0,0,0,0)', lakecolor = '#0E1117'),
     				  coloraxis_showscale=False,
-    				  width=1000, height=1000, dragmode = False,
+    				  width=900, height=600, dragmode = False,
     				  margin={"r":0,"t":0,"l":0,"b":0})
 
     fig.layout.xaxis.fixedrange = True
     fig.layout.yaxis.fixedrange = True
 
-    fig.update_geos(fitbounds="locations")
+    #fig.update_geos(fitbounds="locations")
 
     st.plotly_chart(fig)
 
@@ -107,13 +107,11 @@ def fire_predictor(cutoff, year, colorscale = 'magma'):
                       'large_fire', 
                       colorscale = colorscale) 
                       
-
+    return precision, recall
 
 
 # importing data
 stage_13 = pd.read_pickle('/Users/patricknorman/Documents/stage_13.pkl')
-
-
 
 # streamlit stuff
 st.title('Wildfire Prediction Engine')
@@ -130,7 +128,25 @@ cut = st.sidebar.number_input(
 	'What threshold for fire extent (acres per county)?',
 	min_value = 1, max_value = 500_000, value = 150)
 
-fire_predictor(cut, 2014, colorscale = 'peach')
+precision, recall = fire_predictor(cut, 2014, colorscale = 'peach')
+
+st.title('Performance Metrics')
+
+f'''
+Precision: {round(precision,2)} \n
+Recall: {round(recall,2)}
+
+_Precision_ is the proportion of true positives out of false positives. 
+This tells us how confident we can be that counties we predict to 
+burn more than the threshold actually will.
+
+_Recall_ is the proportion of true positives out of false negatives.
+This tells us how good we were at identifying counties that would
+go on to burn more than the threshold. 
+
+These metrics are calculated across the whole dataset for the specified
+cutoff, while the visualization is only for a single year.
+'''
 
 st.title('How it Works')
 
@@ -139,6 +155,10 @@ This tool has access to a database of previous wildfire locations, as well as
 climate, topography, and fuel data. Using an Extra Trees classifier, we can 
 make predictions about which counties are likely to have a total burnt
 area more than a given cutoff per year. 
+
+If you'd like to see the way this model was created, 
+or investigate my other projects, see my 
+[GitHub!](https://github.com/pjn51/metis-project-5)
 '''
 
 
