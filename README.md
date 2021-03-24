@@ -1,9 +1,10 @@
 # Distributing Wildfire Prevention Resources Using Machine Learning
 
 ## Purpose
-I wanted to create a flexible tool that would be useful for wildfire
-prevention and resource deployment. Wildfires are a growing threat, 
-especially on the West Coast of the United States. A tool that could
+As my capstone project for the intensive data science bootcamp 
+offered by Metis, I wanted to create a flexible tool that would be 
+useful for wildfireprevention and resource deployment. Wildfires are 
+a growing threat, especially on the West Coast of the United States. A tool that could
 predict high-risk areas would be useful so that expensive resources
 such as planes and equipment could be deployed efficiently. 
 
@@ -25,4 +26,23 @@ able to achieve precision and recall scores above 0.7 for most thresholds.
 
 ## Deployment
 As a proof-of-concept, I attached this model to an interactive, web hosted 
-visualization of the predictied spatial distribution of fires made using Plotly and Streamlit.
+visualization of the predictied spatial distribution of fires. I made this using Plotly and Streamlit.
+
+# Using this Repository
+If you want to check out all the steps that I took in this project, check out
+`fire_predition_nuts_and_bolts.ipynb`. 
+
+If you're interested in how I created the interactive visualization and deployed
+it to the web, check out `wildfire.py`. 
+
+Also, make sure to check out my slide deck and presentation that I gave for this project
+over in the [Metis Graduate Directory!]()
+
+
+
+
+
+
+
+
+
