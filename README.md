@@ -35,8 +35,7 @@ If you want to check out all the steps that I took in this project, check out
 If you're interested in how I created the interactive visualization and deployed
 it to the web, check out `wildfire.py`. 
 
-Also, make sure to check out my slide deck and presentation that I gave for this project
-over in the [Metis Graduate Directory!]()
+Make sure to check out my slide deck and presentation that I gave for this project! You can also find my work in the [Metis Graduate Directory.](https://www.thisismetis.com/graduates)
 
 
 
