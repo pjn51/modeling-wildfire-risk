@@ -110,7 +110,6 @@ def fire_predictor(cutoff, year, colorscale = 'magma'):
                       
     return precision, recall
 
-
 # importing data
 stage_15 = pd.read_pickle('/Users/patricknorman/Documents/Python/Data/stage_15.pkl')
 
